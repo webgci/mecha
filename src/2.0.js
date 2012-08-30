@@ -1,3 +1,9 @@
+/**
+* SeletorBrowser v2.0
+* @author Hermann Calvancante
+* @import libChuck
+* @description Responsavel por adicionar class relativa ao browser na tag html
+*/
 (function(window, document, navigator){
 
   if (document.getElementById('sawpf')) return;
@@ -15,16 +21,16 @@
   var isIE = (BrowserDetect.msie);
 
   // http://blog.orite.com.au/web_development/2009-06-30/jquery-ie-detection-issue-workaround/
-  if (isIE && BrowserDetect.version == 6 && (/msie 8/.test(userAgent))) BrowserDetect.version = 8;
+  if (isIE && BrowserDetect.version == 8 && (/msie 8/.test(userAgent))) BrowserDetect.version = 8;
 
   // http://stackoverflow.com/questions/1328963/detect-ie8-compatibility-mode
-  if (isIE && BrowserDetect.version < 8 && document.documentMode) BrowserDetect.version = 8;
+  if (isIE && BrowserDetect.version < 9 && document.documentMode) BrowserDetect.version = 8;
 
   // ---------------------------------------------------------------------------------------------------
 
   if (!(isFirefox || isIE)) return;
-  if (isFirefox && BrowserDetect.version >= 9) return;
-  if (isIE && BrowserDetect.version >= 8) return;
+  if (isFirefox && BrowserDetect.version >= 10) return;
+  if (isIE && BrowserDetect.version == 9) return;
 
   // ---------------------------------------------------------------------------------------------------
 
@@ -173,4 +179,19 @@
   };
   emile(container, 'height: 58px', {duration: 500});
 })(this, document, navigator);
-
+function seletor_browser(u) {
+    var a = u.toLowerCase(),
+      is = function (t) {
+        return a.indexOf(t) > -1
+      },
+      g = 'gecko',
+      w = 'webkit',
+      s = 'safari',
+      o = 'opera',
+      h = document.documentElement,
+      b = [(!(/opera|webtv/i.test(a)) && /msie\s(\d)/.test(a)) ? ('ie ie' + RegExp.$1) : is('firefox/2') ? g + ' ff2' : is('firefox/3.5') ? g + ' ff3 ff3_5' : is('firefox/3') ? g + ' ff3' : is('gecko/') ? g : is('opera') ? o + (/version\/(\d+)/.test(a) ? ' ' + o + RegExp.$1 : (/opera(\s|\/)(\d+)/.test(a) ? ' ' + o + RegExp.$2 : '')) : is('konqueror') ? 'konqueror' : is('chrome') ? w + ' chrome' : is('iron') ? w + ' iron' : is('applewebkit/') ? w + ' ' + s + (/version\/(\d+)/.test(a) ? ' ' + s + RegExp.$1 : '') : is('mozilla/') ? g : '', is('j2me') ? 'mobile' : is('iphone') ? 'iphone' : is('ipod') ? 'ipod' : is('mac') ? 'mac' : is('darwin') ? 'mac' : is('webtv') ? 'webtv' : is('win') ? 'win' : is('freebsd') ? 'freebsd' : (is('x11') || is('linux')) ? 'linux' : '', 'js'];
+    c = b.join(' ');
+    h.className += ' ' + c;
+    return c
+  };
+  seletor_browser(navigator.userAgent);
