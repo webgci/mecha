@@ -150,15 +150,15 @@
   }
   document.getElementsByTagName('head')[0].appendChild(styleTag);
 
-  var IE_BUTTON = '<a href="http://www.baixatudo.com.br/internet-explorer?utm_source=sawpf&utm_medium=banner&utm_campaign=Explorer" class="sawpf-ie" title="Internet Explorer"><span>Internet Explorer</span></a>';
-  var FIREFOX_BUTTON = '<a href="http://www.baixatudo.com.br/mozilla-firefox?utm_source=sawpf&utm_medium=banner&utm_campaign=Firefox" class="sawpf-ff" title="Firefox"><span>Firefox</span></a>';
-  var CHROME_BUTTON = '<a href="http://www.baixatudo.com.br/google-chrome?utm_source=sawpf&utm_medium=banner&utm_campaign=Chrome" class="sawpf-gc" title="Google Chrome"><span>Google Chrome</span></a>';
+  var OPERA_BUTTON = '<a href="http://www.opera.com/download/" class="sawpf-ie" title="Internet Explorer"><span>Opera</span></a>';
+  var FIREFOX_BUTTON = '<a href="http://br.mozdev.org/firefox/download/" class="sawpf-ff" title="Firefox"><span>Firefox</span></a>';
+  var CHROME_BUTTON = '<a href="https://www.google.com/intl/pt-BR/chrome/browser/?hl=pt-br" class="sawpf-gc" title="Google Chrome"><span>Google Chrome</span></a>';
 
   var html = '<div><p><strong>Seu ' +
     ((isIE) ? "Internet Explorer" : "Firefox") +
     ' está desatualizado.</strong><br/>Para uma melhor visualização do site atualize-o ou escolha outro navegador.</p>' +
     '<ul><li>' +
-    CHROME_BUTTON + '</li><li>' + FIREFOX_BUTTON + '</li><li>' + IE_BUTTON +
+    CHROME_BUTTON + '</li><li>' + FIREFOX_BUTTON + '</li><li>' + OPERA_BUTTON +
     '</li></ul>' +
     '<a href="#" id="sawpf-close" title="Fechar">fechar</a>' +
     '</div>';
