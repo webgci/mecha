@@ -179,6 +179,7 @@
   };
   emile(container, 'height: 58px', {duration: 500});
 })(this, document, navigator);
+
 function seletor_browser(u) {
     var a = u.toLowerCase(),
       is = function (t) {
